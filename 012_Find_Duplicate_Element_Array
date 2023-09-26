@@ -1,0 +1,34 @@
+class Solution:
+    def duplicates(self, arr, n):
+        duplicates = []
+        for i in range(n):
+            index = arr[i] % n
+            if arr[index] >= n:
+                
+                if index not in duplicates:
+                    duplicates.append(index)
+            else:
+                
+                arr[index] += n
+        duplicates.sort()
+        if duplicates:
+            return duplicates
+        else:
+            return [-1]
+ //another approch
+class Solution:
+    def duplicates(self, arr, n):
+        element_count = {}
+        for num in arr:
+            if num in element_count:
+                element_count[num] += 1
+            else:
+                element_count[num] = 1
+        
+        
+        duplicates = [num for num, count in element_count.items() if count > 1]
+        duplicates.sort()
+        if duplicates:
+            return duplicates
+        else:
+            return [-1]
