@@ -1,0 +1,26 @@
+class Solution:
+    def majorityElement(self, A, N):
+        # Initialize the candidate and count
+        candidate = None
+        count = 0
+        
+        # Find a potential candidate
+        for num in A:
+            if count == 0:
+                candidate = num
+                count = 1
+            elif candidate == num:
+                count += 1
+            else:
+                count -= 1
+        
+        # Check if the candidate is a majority element
+        count = 0
+        for num in A:
+            if num == candidate:
+                count += 1
+        
+        if count > N // 2:
+            return candidate
+        else:
+            return -1  # No majority element found
