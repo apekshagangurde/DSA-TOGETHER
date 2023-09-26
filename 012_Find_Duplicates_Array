@@ -1,0 +1,17 @@
+class Solution:
+    def duplicates(self, arr, n):
+        duplicates = []
+        for i in range(n):
+            index = arr[i] % n
+            if arr[index] >= n:
+                
+                if index not in duplicates:
+                    duplicates.append(index)
+            else:
+                
+                arr[index] += n
+        duplicates.sort()
+        if duplicates:
+            return duplicates
+        else:
+            return [-1]
