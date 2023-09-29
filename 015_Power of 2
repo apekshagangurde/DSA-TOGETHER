@@ -1,0 +1,13 @@
+class Solution:
+    ##Complete this function
+    # Function to check if given number n is a power of two.
+    def isPowerofTwo(self,n):
+        ##Your code here
+        if(n==0):
+            return False
+        count=0
+        while n>0:
+            if(n&1):
+                count+=1
+            n>>=1
+        return count==1;
