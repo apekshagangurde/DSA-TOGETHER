@@ -1,0 +1,60 @@
+#include <vector>
+
+class Solution {
+public:
+    int numberOfEnclaves(std::vector<std::vector<int>>& grid) {
+        int rows = grid.size();
+        int cols = grid[0].size();
+
+        // Define the directions for moving (up, down, left, right)
+        int dx[] = {-1, 1, 0, 0};
+        int dy[] = {0, 0, -1, 1};
+
+        // Perform DFS from boundary cells
+        for (int i = 0; i < rows; ++i) {
+            if (grid[i][0] == 1) {
+                dfs(grid, i, 0, rows, cols, dx, dy);
+            }
+            if (grid[i][cols - 1] == 1) {
+                dfs(grid, i, cols - 1, rows, cols, dx, dy);
+            }
+        }
+
+        for (int j = 0; j < cols; ++j) {
+            if (grid[0][j] == 1) {
+                dfs(grid, 0, j, rows, cols, dx, dy);
+            }
+            if (grid[rows - 1][j] == 1) {
+                dfs(grid, rows - 1, j, rows, cols, dx, dy);
+            }
+        }
+
+        // Count the remaining land cells
+        int count = 0;
+        for (int i = 0; i < rows; ++i) {
+            for (int j = 0; j < cols; ++j) {
+                if (grid[i][j] == 1) {
+                    count++;
+                }
+            }
+        }
+
+        return count;
+    }
+
+private:
+    void dfs(std::vector<std::vector<int>>& grid, int x, int y, int rows, int cols, int dx[], int dy[]) {
+        if (x < 0 || x >= rows || y < 0 || y >= cols || grid[x][y] == 0) {
+            return;
+        }
+
+        grid[x][y] = 0;  // Mark the cell as visited
+
+        // Explore adjacent cells
+        for (int k = 0; k < 4; ++k) {
+            int newX = x + dx[k];
+            int newY = y + dy[k];
+            dfs(grid, newX, newY, rows, cols, dx, dy);
+        }
+    }
+};
