@@ -1,0 +1,24 @@
+class Solution {
+public:
+    Node* buildTree(vector<int>& v, int start, int end) {
+        if (start > end) return NULL;
+        int mid = (start + end) / 2; // Change '-' to '+' to correctly calculate mid.
+        Node* root = new Node(v[mid]);
+        root->left = buildTree(v, start, mid - 1);
+        root->right = buildTree(v, mid + 1, end);
+        return root; // Add a return statement to return the root.
+    }
+
+    void inorder(Node* root, vector<int>& v) {
+        if (!root) return;
+        inorder(root->left, v);
+        v.push_back(root->data);
+        inorder(root->right, v);
+    }
+
+    Node* buildBalancedTree(Node* root) {
+        vector<int> v;
+        inorder(root, v);
+        return buildTree(v, 0, v.size() - 1); // Return the root of the balanced tree.
+    }
+};
