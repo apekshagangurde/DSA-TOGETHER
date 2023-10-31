@@ -1,0 +1,11 @@
+void pushZerosToEnd(int arr[], int n) {
+     int left = 0; // Left pointer starts at the beginning of the array
+
+    for (int i = 0; i < n; i++) {
+        if (arr[i] != 0) {
+            swap(arr[i], arr[left]); // Swap non-zero element with left pointer
+            left++; // Move left pointer to the next position
+        }
+    }
+     
+  }
