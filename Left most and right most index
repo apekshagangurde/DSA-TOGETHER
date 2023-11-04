@@ -1,0 +1,29 @@
+class Solution
+{
+    public:
+    pair<long,long> indexes(vector<long long> v, long long x)
+    {  
+        
+        pair<long,long>ans;
+        ans.first=-1,ans.second=-1;
+        int count =0;
+        for(int i=0;i<v.size();i++)
+        {
+            if(v[i]==x && count<1){
+                ans.first=i;
+                
+                count++;
+                
+            
+            }
+            
+            if(v[i]==x){
+                ans.second=i;
+                
+            }
+        }
+        return ans;
+    }
+        
+};
+
