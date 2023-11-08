@@ -1,0 +1,574 @@
+\documentclass[a4paper,12pt]{report}
+\setlength{\textwidth}{6.25in} % original 6.25
+\setlength{\textheight}{8in}
+\renewcommand{\baselinestretch}{1.3}
+\oddsidemargin 20pt    %  Left margin on odd-numbered pages.
+\evensidemargin 20pt   %  Note that \oddsidemargin = \evensidemargin
+\topmargin 0pt
+\usepackage {graphics}
+%\usepackage {algorithm}
+%\usepackage {algorithmic}
+\usepackage {epsfig}
+\usepackage {graphicx}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\begin{document} % Begin document "environment".
+
+\chapter*{Acknowledgements\markboth{Acknowledgements}{Acknowledgements}}
+
+\thispagestyle{empty}
+\hspace*{0.5 in}First and foremost, I would like to thank my project guide, Prof. P.K. Shinde,
+for her guidance and support. I will forever remain grateful for the constant support
+and guidance extended by my guide, in making this seminar report. Through our many
+discussions, she helped me to form and solidify ideas\\
+\hspace*{0.5 in} With a deep sense of gratitude, I wish to express my most sincere thanks to,
+\textbf{Prof. Dr. S. S. Sane} for his immense help in planning and executing the works in
+time. My grateful thanks to the departmental staff members for their support.\\
+\hspace*{0.5 in}I would also like to thank my wonderful colleagues and friends for listening my ideas, asking questions  and providing feedback and suggestions for improving my ideas.\\
+
+
+
+
+\vspace*{1.3 in}
+\hspace*{4 in}  Mr. Sutane Sameer Prashant
+
+\chapter*{Abstract\markboth{Abstract}{Abstract}}
+\thispagestyle{empty}
+\hspace*{0.5 in}In this work, RFID (Radio Frequency
+Identification Device) labels are used to create electronic
+transportation tickets for the public transportation system.
+Transport systems with cutting-edge innovations like RFID, IoT,
+and GPS will eventually gain popularity due to their advantages
+of greater comfort and higher ethical standards as compared to
+traditional transport systems or paper ticketing systems. In the
+proposed approach, the passenger is automatically identified by
+using their RFID card, and the fare according to the distance
+travelled by the passenger is automatically subtracted from the
+RFID card. GPS and RFID tags are used to increase the
+precision of fare calculation and passenger identification. The
+RFID system can replace conventional paper-based tickets since
+they are better because they are reusable and offer improved
+accuracy. This eliminates the outdated paper-based bus booking
+system and guards against money laundering and corruption.
+RFID tags are used as reusable tickets that calculate the fee
+based on the user's GPS-measured distance travelled. By using
+this system, human errors and effort are reduced.\\
+
+
+\newpage
+\thispagestyle{empty}
+\tableofcontents
+\thispagestyle{empty}
+\listoffigures
+\thispagestyle{empty}
+\listoftables
+\thispagestyle{empty}
+\newpage	
+\pagenumbering{arabic}
+\lhead{\bfseries IoT-based Ticketing System }
+\chapter{Introduction}
+\hspace{0.5 in}Smart Metropolises need better transport services. A
+region's growth development is accelerated by the effective
+movement of people, goods, and services. Any society must
+have a well-organized and managed transportation network. The transportation network of a megacity is essential to its
+effective operation. For those who live in metropolitan
+regions, life comes to a complete stop when there are no
+effective commute options. In contemporary high-tech
+metropolises, a good transportation system and channel
+operation establish a high standard of living. A megacity’s
+transportation system is pivotal to its effective operation.
+When there are no practical commute options, life for
+individuals who live in civic areas fully stops. A good
+transportation structure and channel operation produce a high
+position of living in Ultramodern high-tech metropolises.
+According to request reports, the smart transportation member
+will experience periodic growth of 25.1 during the coming
+five times. By 2021, it's anticipated to grow from USD 72.05
+billion in 2016 to USD 220.76 billion. In smart
+metropolises, the need for public security and safety, and
+government measures to upgrade the current transportation
+Structure are the main motorists of this growth. The purpose
+of the service is to encourage individuals to take public
+transportation. It helps to guarantee the safety of those using
+public transportation. The integration of the transportation
+system saves guests time by barring the need to buy tickets for
+colourful types of transportation. They can admit one chow
+card and make a single electronic payment for motorcars,
+metros, trains, and other transportation. The card can be
+reloaded online, offline, or at retail locales or conveyance
+capitals. Systems for s mart transportation and
+multitudinous wireless communication results have been
+suggested. Within ITS, radio modem communication is
+constantly employed for both short- and long-range
+communication on UHF and VHF frequencies. There's a trend
+toward smaller, more important computer processors on auto
+as a result of recent advancements in automotive electronics.
+Beginning in the early 2000s, the current trends involve
+smaller, more expensive CPU modules that operate on tackle
+memory and real-time operating systems. Artificial
+intelligence, ubiquitous computing, and model-grounded
+process control are just a few of the more sophisticated software activities that may be imposed on the newly
+established system platforms. In vehicle satellite
+navigation and GPS (global positioning system) systems with
+two-way communication with a commercial data source are
+being installed in an increasing number of vehicles. To
+calculate vehicle pets, these vehicles' position measures are
+used. ultramodern ways might rather calculate on smartphonegrounded results employing so called Telematics 2.0 ways
+rather than technical tackle. For these new mobility models to
+be successful, mate operation chops and high monetization
+dexterity are needed. Earnings can be divided fleetly and
+fluently using customizable agreements and billing platforms,
+which also improves customer satisfaction. druggies can admit
+advanced service as well as abatements, fidelity points, and
+Impulses, as well as be laboriously engaged through direct
+marketing.
+The service's goal is to promote the usage of public
+transportation by individuals. By effectively automating,
+planning, and managing public transportation with the use of
+real-time data analysis of various routes, the goal can be
+accomplished. The data aids in understanding vehicle
+schedules and provides operators and dispatchers with quick
+responses during deviation, delay, or other emergency events.
+Additionally, it aids in maintaining the safety of passengers
+using public transportation.
+The technologies utilised in intelligent transportation
+systems range from basic management systems such as GPS
+enabled cars, traffic signal control systems, or speed cameras
+to monitoring applications such as security CCTV systems
+and automatic incident detection or halted vehicle detection
+systems. In our country, there are frequent problems with
+the buses that are related to the ticketing procedure. The bus
+conductor will hand out tickets to every passenger. According
+to the headcount and the amount given, the conductor should
+allocate the ticket to the passengers. It will take a lot of
+additional paper to print the tickets, and using a portable
+machine also creates a lot of problems. The traveller also
+needs to bring the right amount of money. The conductor
+ought to have the appropriate change when a traveller doesn't
+have the required sum. Sometimes conductors don't give
+passengers the correct change. For example, a ticket
+from Salem to Coimbatore costs just 49 rupees, but really the
+traveller on that bus instead gives the conductor 50 rupees.
+After then, the driver must give the passenger one rupee.
+Many conductors fail to give passengers the correct change,
+however, some do. RFID is used in modern technologies to
+overcome these problems. The RFID reader will extract
+information about the passenger from the RFID tag. The
+relevant sum is deducted from the passenger using the RFID
+tag. To resolve this issue of the paper ticketing system for
+passengers who travel regularly many works come into
+consideration like tracking the distance of the passengers as
+well as the RFID-based authentications which will act as a
+pass for the vehicle and soon.
+\\
+\section{Proposed system}
+
+\hspace{0.5 in}This work calls for computerized ticketing for the public
+transit system. RFID (Radio Frequency Identification Device)
+labels will be present. Transportation systems equipped with
+modern innovations like RFID, IoT, and GPS will eventually
+become more popular due to their advantages over
+conventional transport methods, such as improved comfort
+and higher living standards. The suggested architecture calls
+for automatic passenger identification and automatic charge
+deduction based on distance travelled. To improve the
+accuracy of fee calculation and passenger identification, RFID
+tags and GPS are employed. The RFID system can replace
+conventional paper-based tickets since it is more accurate and
+superior because it allows for multiple uses. By doing this,
+cheating and financial fraud are avoided as well as the
+outdated paper-based car ticketing system. Reusable tickets
+made of RFID tags use GPS technology to calculate the cost
+based on the distance the user travels. Human mistakes and
+efforts are reduced with this method. This system gives
+the passenger very accurate results upon their travel and made
+them feel free to travel in a public transport system. The
+system automatically tracks and calculates the passenger’s
+travel distance, and it additionally shows the base price. \\
+\section{Objectives}
+\hspace*{0.5 in}\textbf{\textit{Designing a model of a travel system for passengers while
+they are traveling.}}
+This work represents a comprehensive and highly automated ticketing system that offers unparalleled convenience, particularly for passengers who are frequent travelers. At its core, this system introduces smart cards, a sustainable and eco-friendly alternative to the traditional paper-based ticketing system. These smart cards are not only reusable but also highly practical, serving as universal travel cards that grant passengers access to any route within the transportation network.
+
+What sets this system apart is its integration of Internet and GPS services, leveraging both to provide a seamless and efficient experience for passengers. Internet connectivity is harnessed for real-time fare calculation and to access a range of travel-related information. The inclusion of GPS technology ensures accurate measurement of the distance a passenger has traveled. Importantly, GPS operates independently of Internet connectivity, making it a robust and reliable component of the system. Even in areas with limited or no Internet access, passengers can trust the GPS functionality to provide accurate location and distance data. In essence, this integrated system not only simplifies ticketing but also enhances the overall travel experience, all while promoting sustainability and reliability in the transportation sector.\\
+\hspace*{0.5 in}
+\textbf{\textit{Design an application in which passengers can track the
+distance and the amount for it.}}
+ This innovative transportation system has been meticulously designed to offer passengers the utmost clarity and convenience, particularly when making fare payments using smart cards. The system is engineered to ensure that passengers can seamlessly and effortlessly deduct the precise fare amount from their smart cards, eliminating any room for confusion or discrepancy.
+
+Central to the system's operation is the integration of a Universal Serial Bus (USB) MODEM, a sophisticated component that serves as a pivotal link. This USB MODEM is instrumental in the creation and online access to a comprehensive traveler's database, enhancing the efficiency and transparency of the entire ticketing and travel process. It empowers the system to swiftly and accurately process and verify transactions, all while providing a real-time database for monitoring passenger journeys and transactions.
+
+Moreover, the system employs a highly advanced computer algorithm with the capability to disseminate real-time position data over the internet. This real-time tracking and monitoring mechanism transform the transportation system into an Internet of Things (IoT)-based infrastructure. This IoT integration not only enhances the operational efficiency but also enriches the passenger experience by providing real-time information about routes, journey times, and any service-related updates.
+
+Beyond its application in general passenger transport, this progressive approach is also being extended to bolster the safety and reliability of other transportation sectors. For instance, it is being harnessed to ensure the secure and punctual transit of schoolchildren, where accuracy and dependability are paramount.
+
+The ultimate goal of this visionary initiative is to provide travelers with the most dependable Prepaid Smart Card solution available. These smart cards offer passengers a secure and user-friendly means of accessing transportation services while significantly reducing the reliance on traditional paper-based ticketing systems. By harnessing modern technology, data-driven solutions, and IoT principles, this system seeks to redefine the travel experience, making it both convenient and reliable for passengers, while also promoting sustainability and transparency in the transportation sector.\\
+
+
+\chapter{Literature Survey}
+\begin{itemize}
+    \item \textbf{"RFID-based localization and tracking technologies" (L. M. Ni, D. Zhang, and M. R. Souryal, IEEE Wireless Communications, 2011):}
+
+This paper delves into the realm of Radio-Frequency Identification (RFID) technology, examining its utilization for localization and tracking applications. RFID is a wireless technology commonly used for identifying and tracking objects, and it's extensively employed in logistics and supply chain management. In the context of localization and tracking, RFID tags can be attached to assets or individuals to enable their real-time monitoring and management. The paper discusses the technical aspects of RFID-based tracking, its accuracy, and the potential challenges associated with this technology.
+\item \textbf{"GPS Localization Accuracy Classification: A Context-Based Approach" (N. M. Drawil, H. M. Amar, and O. A. Basir, IEEE Transactions on Intelligent Transportation Systems, 2013):}
+
+This paper addresses a critical issue in Global Positioning System (GPS) technology: the accuracy of GPS-based localization. The authors propose an innovative approach that classifies GPS accuracy based on contextual factors. In other words, it recognizes that the accuracy of GPS readings may vary depending on the environment, such as urban areas with tall buildings or open spaces with a clear line of sight to satellites. By categorizing GPS accuracy in this way, it becomes possible to enhance the use of GPS for location-based services and navigation in urban environments.
+\item \textbf{"Internet-of-Things Based Smart Local Bus Transport Management System" (V. Pawar and N. P. Bhosale, ICECA, 2018):}
+
+This paper presents an Internet of Things (IoT) based system tailored for the efficient management of local bus transportation. IoT technology entails connecting everyday objects to the internet, enabling them to collect and share data. In the context of public transportation, this can involve equipping buses with sensors and communication devices to provide real-time tracking, passenger information, and management capabilities. Such a system has the potential to significantly improve the overall quality of local bus services, enhancing passenger experiences and streamlining operations.
+\item \textbf{"Interacting Multiple Model Filter-Based Sensor Fusion of GPS With In-Vehicle Sensors for Real-Time Vehicle Positioning" (K. Jo, K. Chu, and M. Sunwoo, IEEE Transactions on Intelligent Transportation Systems, 2012):
+}
+Real-time vehicle positioning is a critical aspect of many transportation and navigation systems. This paper addresses the challenges associated with accurately determining a vehicle's position in real-time by combining data from multiple sources. It introduces an approach that utilizes GPS data in combination with in-vehicle sensors. By fusing these data sources through an Interacting Multiple Model (IMM) filter, the authors aim to achieve more accurate and reliable vehicle position estimation, which is essential for applications like autonomous vehicles and advanced driver-assistance systems.
+\item \textbf{"Map-Aided Integrity Monitoring of a Land Vehicle Navigation System" (N. R. Velaga, M. A. Quddus, A. L. Bristow, and Y. Zheng, IEEE Transactions on Intelligent Transportation Systems, 2012):
+}
+This paper focuses on improving the integrity and reliability of land vehicle navigation systems. Navigation systems often rely on GPS, but their accuracy can be compromised in challenging environments. The paper proposes integrating map data into the navigation process to enhance system integrity. By cross-referencing GPS readings with map information, the system can detect and correct errors or inaccuracies, particularly useful for situations where GPS signals may be blocked or reflected in urban areas.
+\item \textbf{"Matching Raw GPS Measurements on a Navigable Map Without Computing a Global Position" (C. Fouque and P. Bonnifait, IEEE Transactions on Intelligent Transportation Systems, 2012):
+}
+This paper introduces a novel technique for matching raw GPS measurements with a navigable map without the need to compute a global position. The core idea is to compare GPS measurements directly to the map data to determine a vehicle's location. This approach can reduce computational complexity and improve real-time performance, making it valuable for applications such as vehicle navigation and tracking, especially in situations where computational resources are limited.
+\item \textbf{"Travel Time Prediction Using a Seasonal Autoregressive Integrated Moving Average Time Series Model" (A. Guin, IEEE Intelligent Transportation Systems Conference, 2006):
+}
+Accurate travel time prediction is crucial for traffic management and route planning. This paper presents a Seasonal Autoregressive Integrated Moving Average (ARIMA) model for predicting travel times. The ARIMA model is a powerful tool for time series forecasting, and the "seasonal" aspect accounts for recurring patterns, such as daily or weekly traffic fluctuations. By applying this model, transportation authorities can make more informed decisions regarding traffic flow and congestion management.
+\item \textbf{"A Vehicle Tracking System Using Greedy Forwarding Algorithms for Public Transportation in Urban Arterial" (O. D. Jimoh, L. A. Ajao, O. O. Adeleke, and S. S. Kolo, IEEE Access, 2020):
+}
+This paper discusses the development of a vehicle tracking system specifically designed for public transportation in urban environments. Public transportation services in urban areas often face challenges such as traffic congestion and route deviations. The authors introduce a tracking system that employs "greedy forwarding" algorithms to efficiently monitor and manage public transportation. This technology can enhance service reliability and passenger experiences in crowded urban settings.
+\item \textbf{"A Solution to the Ill-Conditioned GPS Positioning Problem in an Urban Environment" (T. -H. Chang, L. -S. Wang, and F. -R. Chang, IEEE Transactions on Intelligent Transportation Systems, 2009):
+}
+GPS positioning in urban environments can be challenging due to signal reflections and obstructions. This paper offers a solution to enhance GPS accuracy in such conditions. The authors propose techniques to mitigate the challenges posed by the "ill-conditioned" nature of GPS positioning in urban settings. This is critical for applications like navigation and location-based services in cities.
+\item \textbf{"Adaptive background mixture models for real-time tracking" (C. Stauffer and W. E. L. Grimson, IEEE Computer Society Conference on Computer Vision and Pattern Recognition, 1999):
+}
+This paper explores computer vision and real-time object tracking. It introduces the concept of adaptive background mixture models, which is a method for tracking objects in dynamic environments. The technique allows for the efficient and accurate identification of objects against changing backgrounds, a fundamental aspect of many computer vision and surveillance systems.
+
+\item \textbf{"Cooperative Vehicle Positioning via V2V Communications and Onboard Sensors" (S. Fujii et al., 2011 IEEE Vehicular Technology Conference):}
+This paper explores vehicle-to-vehicle (V2V) communications and onboard sensors for cooperative vehicle positioning. V2V communication is a technology that allows vehicles to share data with each other, enabling collaborative features like cooperative positioning. By combining information from onboard sensors and communication between vehicles, this approach aims to enhance vehicle positioning accuracy, which is crucial for applications such as autonomous driving and advanced driver-assistance systems (ADAS).
+\item \textbf{"A Framework for Supporting Autonomous Navigation in Automobiles" (E. Taropa, V. P. Srini, and Tack-Don Han, Fourth IEEE Workshop on Software Technologies for Future Embedded and Ubiquitous Systems, 2006):}
+This paper presents a framework for supporting autonomous navigation in automobiles. Autonomous navigation refers to a vehicle's ability to navigate and control itself without human intervention. The framework likely addresses software and hardware components that enable features like autonomous driving, obstacle detection, and route planning, contributing to the development of self-driving cars.
+\item \textbf{"Partial Automation of Automobiles using Embedded Systems" (V. S. M. Revanth Pasupuleti, B. M. Jollu, K. Chaithanya Janapati, A. Naseeha, and P. Chandana, 4th International Conference on Trends in Electronics and Informatics, 2020):}
+This paper focuses on the partial automation of automobiles using embedded systems. Partial automation typically involves advanced driver-assistance features, such as adaptive cruise control or lane-keeping systems, that assist but do not fully replace the driver. Embedded systems, which are computer systems integrated into a vehicle's hardware, play a key role in enabling such automation. The paper may present specific techniques or technologies for enhancing vehicle safety and comfort.
+\item \textbf{"Implementation of Electronic Stability Control and Adaptive Front Lighting System for Automobiles" (P. Khurana, R. Arora, and M. K. Khurana, 2014 International Conference on Power, Control, and Embedded Systems):}
+This paper discusses the implementation of electronic stability control (ESC) and adaptive front lighting systems (AFS) for automobiles. ESC is a safety feature that helps prevent skidding and loss of control, while AFS improves visibility by adjusting the direction of the headlights based on the vehicle's speed and steering. These systems contribute to safer and more comfortable driving, and this paper may detail their integration and benefits.
+\item \textbf{"Urban Eye: An Outdoor Localization System for Public Transport" (R. Verma et al., IEEE INFOCOM 2016 - The 35th Annual IEEE International Conference on Computer Communications):
+}"Urban Eye" introduces an outdoor localization system designed for public transportation. Public transport often operates in complex urban environments, where GPS signals may be unreliable. This system may propose alternative methods or technologies for accurately tracking public transport vehicles in these challenging settings. It could be beneficial for improving the reliability and efficiency of public transportation services.
+\item \textbf{"Vehicles on RFID: Error-Cognitive Vehicle Localization in GPS-Less Environments" (H. Qin, Y. Peng, and W. Zhang, IEEE Transactions on Vehicular Technology, 2017):
+}This paper addresses the challenge of vehicle localization in GPS-less environments. It proposes a system that utilizes RFID technology to enhance vehicle positioning accuracy. In areas where GPS signals are weak or unavailable, RFID-based localization could provide a valuable alternative. The term "error-cognitive" suggests a system that can adapt and correct localization errors.
+\item \textbf{"Design of Intelligent Bus Positioning Based on Internet of Things for Smart Campus" (X. Feng, J. Zhang, J. Chen, G. Wang, L. Zhang, and R. Li, IEEE Access, 2018):
+}This paper focuses on the design of an intelligent bus positioning system based on the Internet of Things (IoT) for a smart campus. IoT technology enables the real-time tracking and management of buses on a campus. Such a system can provide valuable services, including accurate bus arrival times, passenger information, and route optimization. It contributes to creating more efficient and passenger-friendly campus transportation.
+\item \textbf{"UHF-RFID-Based Real-Time Vehicle Localization in GPS-Less Environments" (R. Chen, X. Huang, Y. Zhou, Y. Hui, and N. Cheng, IEEE Transactions on Intelligent Transportation Systems, 2022):
+}This paper tackles the challenge of real-time vehicle localization in GPS-less environments using Ultra-High Frequency Radio-Frequency Identification (UHF-RFID). It explores how RFID technology can be used to track and position vehicles in scenarios where GPS signals are unreliable or unavailable. Such solutions are important for applications like logistics and urban transportation.
+\end{itemize}
+
+
+\chapter{Problem Definition}
+
+\section{Problem Definition}
+\hspace*{0.5 in}The traditional ticketing system have many flaws some of which are mentioned below\\
+\begin{itemize}
+    \item \textbf{Inefficient Ticketing Systems:} Many legacy public transportation systems still rely on manual, paper-based ticketing processes. These systems are often time-consuming and error-prone. Passengers may need exact change, and conductors or ticketing staff can make mistakes in providing tickets and change. This inefficiency can lead to delays and inconvenience.
+    \item \textbf{Lack of Real-Time Information:} Traditional ticketing systems often do not provide passengers with real-time information about their travel history, distances traveled, and fare details. This lack of transparency can make it difficult for passengers to plan their journeys effectively and can lead to operational challenges for transportation authorities.
+    \item \textbf{Environmental Impact:} Paper-based ticketing systems generate a significant amount of paper waste. This environmental impact is a growing concern as more focus is placed on sustainability and reducing the carbon footprint of transportation systems. Shifting toward more eco-friendly solutions is a critical consideration.
+    \item \textbf{Security Concerns:} Traditional ticketing systems may be vulnerable to security issues such as money laundering, corruption, and fraud. The lack of a robust method for tracking passenger journeys and fare calculations can create opportunities for illicit activities. Enhancing security and transparency in public transportation operations is essential [IV. CONCLUSION AND FUTURE WORK].
+    \item \textbf{Operational Inefficiencies:} Conventional transportation systems may suffer from operational inefficiencies, including underutilization of the fleet. Without real-time data and tracking, it can be challenging to optimize routes, schedules, and resources efficiently. This can lead to increased operational costs and reduced service quality [8].
+    \item \textbf{Manual Data Handling:} Legacy systems often involve manual data handling for various tasks, such as record-keeping and fare collection. This manual approach is not only time-consuming but also prone to human errors and data inaccuracies [IV. CONCLUSION AND FUTURE WORK].
+    \item \textbf{Limited Payment Options: }Traditional systems often have limited payment options, which can be inconvenient for passengers who prefer electronic payment methods. Offering a variety of payment options and enhancing the overall payment experience can attract more passengers to public transportation [18].
+\end{itemize}
+
+In summary, these problems highlight the need for innovative solutions in public transportation systems. The "IoT-based Web Application for Passenger Travel Tracking System" is designed to address these challenges by introducing an integrated approach that leverages IoT and RFID technology to offer electronic ticketing, automatic passenger identification, real-time tracking, and more, ultimately enhancing the efficiency and passenger experience of public transportation networks.
+
+
+
+
+
+
+
+\section{Solution}
+The "IoT-based Web Application for Passenger Travel Tracking System" offers significant advantages over traditional ticketing systems in public transportation. It enhances efficiency by providing real-time tracking, allowing passengers to monitor their location and fare through a user-friendly web app. This system offers convenience with digital payments, reducing the need for cash or tokens. Furthermore, it reduces the environmental impact by eliminating paper-based tickets and aligns with sustainability goals. Enhanced security features minimize fraud and money laundering risks, and operational optimization data improves resource allocation. Passengers enjoy reduced queues and accurate fare calculations, leading to an improved travel experience. Data-driven decision-making is facilitated, and its IoT integration adds flexibility and adaptability across different transportation modes. This system contributes to smart cities' development and offers valuable insights into passenger behavior and preferences, ultimately fostering more efficient, sustainable, and technology-driven urban transportation networks.\\
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{1.png}
+    \caption{Block diagram}
+    \label{fig:enter-label}
+\end{figure}
+
+\hspace*{0.5 in}The block diagram for the IoT-based Passenger Travel Tracking System consists of two primary phases: the Physical Layer and the Application Layer. These two layers work in tandem to enable real-time tracking and monitoring of passenger journeys.\\
+The block diagram consists of two phases one is the
+physical layer which is nothing but a hardware representation
+layer and the other one is an application layer. The physical
+layer consists of all the hardware parts like MSP430g2553
+Microcontroller, NODEMCU WIFI module OLED Display,
+RFID Reader, and RFID Card, GPS Module. All the hardware
+parts are connected to each other. In this layer RFID Reader,
+nothing but a smart card reader is connected to a WIFI
+Module whenever the RFID Reader reads the smart it got
+connected to the WIFI module, Microcontroller grasps the
+information of the smart card and sent it to the web
+application which is an application layer. The Application
+layer consists of a web application that can provide us with
+the necessary information regarding the travel history of a
+passenger like distance, locations of the journey, time, date,
+and base fare price of the passenger he has travelled.
+Passengers can track their journeys using the web application\\
+\hspace*{0.5in}
+
+
+
+ {When a passenger or commuter boards a vehicle, the process begins by initiating a connection with the WIFI Module through a login. Subsequently, they are required to scan their RFID Card on the RFID reader. If the RFID reader successfully authenticates the card, the credentials are verified, and the passenger is granted access to the vehicle.
+
+As the passenger boards the vehicle and scans their card, the system records the precise location of the passenger. This location information is instantly displayed on the OLED panel within the vehicle. Furthermore, when the passenger exits the vehicle, they are prompted to re-scan their card. This action serves to record the exit location of the passenger.
+
+At this point, the system calculates the travel distance, as well as the fare price for the distance traveled. These details are promptly displayed on the OLED panel within the vehicle. Simultaneously, the system transmits all journey-related information, including distance, time, date, and fare price, to the web application via the Wi-Fi module ESP8266. This allows passengers to conveniently track and monitor their entire journey through the web application.}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{2.png}
+    \caption{Methodology flowchart}
+    \label{fig:enter-label}
+\end{figure}
+
+\textbf{
+Physical layer:}
+{The Physical Layer represents the hardware components and their interconnections. It includes the following key elements:}
+\begin{itemize}
+	\item \textbf{MSP430g2553 Microcontroller:} This microcontroller serves as the central processing unit of the system, responsible for managing data flow and communication between various components.
+ The MSP430G2553 is part of the ultra-low-power mixed signal microcontroller family and offers a range of exceptional features. These include support for up to 24 capacitive touch-enabled I/O pins, 16-bit timers, and a versatile analog comparator.
+
+This microcontroller is an ideal choice for embedded devices with stringent low-power requirements, as it consumes minimal current, often drawing less than 1 A when in a standby state. Its operational speed can reach a maximum of 25 MHz.
+
+In our proposed system, the MSP430G2553 microcontroller serves as the central component that manages the entire system's functionality. It is responsible for tracking passenger journeys, calculating distances and fares, and transmitting this information to the web application. The microcontroller's characteristics, including low power consumption and versatile capabilities, make it a suitable choice for our project.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.25\linewidth]{controller.png}
+    \caption{MSP430g2553 microcontroller}
+    \label{fig:enter-label}
+\end{figure}
+
+	\item	\textbf{RFID-RC522:}The NXP RC522 is a highly integrated RFID card reader designed for non-contact 13.56 MHz communication. It stands as an excellent choice for the development of smart meters and portable handheld devices. This reader functions as a read-write semiconductor and is known for its low power consumption, cost-effectiveness, and compact form factor.
+
+In practical applications, RFID readers, such as the NXP RC522, are commonly employed for reading smart cards or RFID cards, primarily for authentication purposes. Their capabilities make them a dependable choice for various authentication and identification scenarios.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.25\linewidth]{rfid.png}
+    \caption{RFID reader}
+    \label{fig:enter-label}
+\end{figure}
+
+
+
+  \item	\textbf{NEO-6M GPS Module:}GPS modules utilize radio frequency (RF) frequencies to establish connections with satellites. Within these modules, small CPUs and antennas are deployed to automatically receive data from orbiting satellites. The GPS module processes data from multiple sources, including timestamps provided by the observable satellites. Its principal purpose is to pinpoint precise locations and generate highly accurate geographical data.
+  
+\begin{figure}
+    \centering
+    \includegraphics[width=0.25\linewidth]{gps.png}
+    \caption{NEO-6M GPS module}
+    \label{fig:enter-label}
+\end{figure}
+
+
+
+  \item	\textbf{OLED Display:}An Organic Light-Emitting Diode, often abbreviated as OLED or organic LED, is a type of light-emitting diode (LED) that incorporates a thin organic compound film as its emissive electroluminescent layer. When an electric current passes through this layer, it emits light in response. OLED technology is used to display various information, including a passenger's boarding and departure points, the distance traveled, the fare amount, and other relevant data.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.25\linewidth]{oled.png}
+    \caption{OLED display}
+    \label{fig:enter-label}
+\end{figure}
+
+
+
+  
+  \item \textbf{ESP8266 MOD:}The ESP8266 Wi-Fi Module, a sophisticated System on Chip boasting an embedded TCP/IP protocol stack, offers the capability for any microcontroller to seamlessly establish a connection with your Wi-Fi network. What sets the ESP8266 apart is its ability to efficiently handle all Wi-Fi networking tasks, effectively relieving other application processors from these responsibilities, and even hosting applications of its own. Its primary function revolves around bridging the communication gap between two distinct systems, making it an invaluable component for facilitating connectivity\\
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.25\linewidth]{nodemcu.png}
+    \caption{ESP8266 MOD}
+    \label{fig:enter-label}
+\end{figure}
+\end{itemize}\\
+
+
+
+\textbf{
+Application layer:}
+The Application Layer is the software aspect of the system, which includes a web application designed to provide passengers and administrators with comprehensive information about passenger travel. This layer features:
+\begin{itemize}
+	\item \textbf{Web Application:}The web application is accessible through a web browser, allowing both passengers and administrators to interact with the system. It provides a user-friendly interface to access and visualize travel-related data.
+The web application is designed to offer valuable insights into passenger travel history, such as distance covered, journey locations, timestamps, dates, and the base fare for the passenger's travel. Passengers can use this application to track and monitor their journeys in real-time, ensuring a transparent and informative travel experience.
+
+In summary, the IoT-based Passenger Travel Tracking System's block diagram combines a robust physical layer with essential hardware components and an efficient application layer to create a seamless and informative travel tracking experience for passengers. The RFID Reader and WIFI Module bridge the physical and application layers, enabling the collection and transmission of data, while the web application provides an accessible platform for users to access and interpret their travel history data. This comprehensive system enhances passenger travel tracking and ensures a more transparent and user-friendly travel experience.
+\item \textbf{Code Composer Studio:}Code Composer Studio (CCS) stands as a robust integrated development environment (IDE) created by Texas Instruments, tailored for the development of embedded systems, particularly within the realm of the Internet of Things (IoT). CCS provides an extensive platform that facilitates the writing, debugging, and optimization of code for Texas Instruments' wide range of microcontrollers and processors, including renowned series like MSP430, C2000, and Tiva-C. This IDE offers a user-friendly interface equipped with comprehensive tools for code development, debugging, and performance analysis. It includes advanced debugging features such as real-time variable monitoring, hardware emulation, and software simulation, which is particularly beneficial for IoT development where real-world testing can be challenging. Furthermore, CCS streamlines project management, integrates seamlessly with version control systems like Git, and boasts extensive support resources and a vibrant developer community. With the surge in IoT applications, Code Composer Studio has emerged as an invaluable asset for developers, enabling them to create, optimize, and debug embedded systems that power IoT devices and applications, fostering innovation in the connected world.
+\hspace{0.5 in}Code Composer Studio serves as a versatile integrated development environment (IDE) with two primary functions: embedded project design and low-level JTAG debugging. In recent editions, CCS has evolved by leveraging the open-source Eclipse IDE as its foundation, allowing for easy expansion to incorporate OS-level application debugging for platforms like Linux, Android, and Windows Embedded. Additionally, it supports open-source compiler suites like GCC, offering developers a wide range of options. Early versions of CCS included DSP/BIOS and SYS/BIOS, which are real-time kernels for microcontroller applications. As part of this ever-expanding ecosystem, TI-RTOS embedded tools are now offered as a free CCS plugin, enhancing the development environment further. This integration also facilitates debugging of various subsystems, providing developers with powerful tools to create and optimize embedded applications in diverse domains.
+\item \textbf{Thing Speak:}ThingSpeak, an open-source Internet of Things (IoT) platform developed by MathWorks, stands as a versatile and user-friendly system for IoT data collection, visualization, and analysis. This cloud-based platform offers a convenient and accessible solution for gathering, processing, and making sense of data generated by a wide array of connected devices and sensors.
+
+ThingSpeak's appeal lies in its compatibility with various IoT hardware components, including sensors, microcontrollers, and more. This flexibility makes it suitable for diverse IoT applications, from environmental monitoring and smart agriculture to home automation and industrial sensor networks. Users can effortlessly connect their devices to ThingSpeak through standard web protocols and REST APIs, facilitating the smooth transmission of data to the platform.
+
+One of the platform's standout features is its real-time data visualization capabilities. ThingSpeak empowers users to create custom dashboards and graphical plots, enabling the live monitoring of data trends and changes. Whether it's tracking temperature fluctuations, monitoring energy consumption, or keeping an eye on air quality, users can tailor their dashboards to their specific needs.
+
+ThingSpeak further extends its capabilities with MATLAB integration, providing a powerful tool for advanced data analysis and processing. Users can harness MATLAB's computational prowess to derive meaningful insights, detect anomalies, and perform complex calculations on their IoT data. This integration is especially valuable for researchers, engineers, and data scientists working on IoT projects that require more intricate data manipulation and computation.
+
+Moreover, ThingSpeak supports data sharing and collaboration. Users can make their data public or private, share it with specific collaborators, and even take advantage of MATLAB analytics to gain deeper insights into their data. This feature is beneficial for collaborative research projects or commercial applications where data sharing and analysis are critical.
+
+In summary, ThingSpeak offers a comprehensive IoT platform that caters to a wide audience, from hobbyists and educational institutions to professionals and industries. Its ease of use, real-time visualization, and MATLAB integration make it a powerful tool for collecting, analyzing, and visualizing data from connected devices, driving innovation in the IoT space.
+\end{itemize}
+
+
+\chapter{Apllications}
+\hspace{0.5 in}The "IoT-based Web Application for Passenger Travel Tracking System" has a wide range of applications that can enhance the efficiency and convenience of public transportation. Some of these applications include:\\
+\begin{itemize}
+    \item \textbf{Public Transportation Management: }Public transportation authorities can leverage this system to enhance the overall management and monitoring of their fleet of vehicles. Real-time tracking of bus locations, schedule management, and route optimization are key features. This not only ensures service reliability but also helps in responding promptly to unexpected delays or disruptions.\\
+
+\item \textbf{Passenger Ticketing and Fare Collection:} Passengers can conveniently purchase tickets or load credit onto their smart cards through the web application. This streamlined approach simplifies the fare collection process, reducing the need for physical ticketing infrastructure and minimizing operational costs.\\
+
+\item \textbf{Travel History and Analytics:} Passengers gain access to their comprehensive travel history, encompassing journey distances, timings, and fare details. This feature empowers passengers to manage their travel expenses effectively and helps in budget planning.\\
+
+\item \textbf{Traffic and Vehicle Efficiency:} By collecting extensive data on vehicle locations and travel times, the system offers insights into traffic patterns and vehicle efficiency. This valuable information can be employed to optimize routes, alleviate congestion, and reduce the environmental impact of public transportation.\\
+
+\item \textbf{Security and Safety:} The real-time location data provided by the system enhances the safety and security of passengers. This data is particularly critical in emergency situations or when ensuring the safety of school transportation services.\\
+
+\item \textbf{Environmental Impact Assessment:} The data collected by the system aids in assessing the environmental impact of public transportation systems. This supports efforts to make transportation more eco-friendly and sustainable, contributing to broader environmental goals.\\
+
+\item \textbf{Integration with Smart Cities:} The system can be seamlessly integrated into larger smart city initiatives, supplying data for urban planning, traffic management, and transportation infrastructure development. It becomes a vital component in creating interconnected and intelligent urban environments.\\
+
+\item \textbf{Multimodal Transport:} In a multimodal transportation system, where various modes of transport are integrated, this system ensures passengers can smoothly transition between different modes while guaranteeing accurate fare calculations for their entire journey.\\
+
+\item \textbf{Passenger Communication:} Facilitating direct communication between passengers and transportation authorities, the system enables real-time updates, alerts, and notifications. Passengers can stay informed about route changes, delays, or disruptions, enhancing their overall experience.\\
+
+\item \textbf{Tourist and Visitor Services:} Tourists and visitors benefit from a user-friendly platform that facilitates ticket purchases and provides travel information. This enhances their travel experience and ensures they can efficiently navigate the public transportation system in an unfamiliar city.\\
+
+\item \textbf{Fleet Management:} Private transportation providers can also optimize their operations using the system. They can efficiently manage their fleets, track vehicle locations, and ensure precise billing for their services, whether for ride-sharing or private transportation options.\\
+
+\item \textbf{Reduced Carbon Footprint:} By optimizing routes, minimizing idle times, and facilitating a more efficient transportation system, this technology contributes to the reduction of the carbon footprint of public transportation. This aligns with sustainability goals and environmental commitments.
+\end{itemize}
+
+
+
+\chapter{Conclusion}
+\hspace*{0.5 in} A significant portion of a country's population relies on transportation as a fundamental part of their daily lives, emphasizing the critical importance of an efficient and reliable ticketing system. However, traditional public transportation systems face a myriad of challenges and problems. Among these are issues related to fare evasion, inefficient fare collection processes, and the significant burden placed on the government due to fraudulent practices by some passengers. To address these longstanding problems and usher in a more innovative and efficient era in public transportation, the "IoT-based Web Application for Passenger Travel Tracking System" was developed.\\
+\hspace*{0.5 in}In conventional public transportation systems, fare evasion remains a persistent challenge, with some passengers managing to travel without paying their fair share. This practice not only results in revenue loss for transportation authorities but also increases the financial burden on legitimate commuters and the government. The introduction of the "IoT-based Web Application for Passenger Travel Tracking System" revolutionizes the ticketing process. Passengers are required to preload funds onto smart cards, making it increasingly difficult for fare evaders to board vehicles without a valid payment. This approach aligns with a broader goal of making fare payment more convenient, secure, and transparent.\\
+\hspace*{0.5 in}Furthermore, the implementation of an automated fare collection system offers substantial benefits. It significantly reduces the need for a large number of staff members dedicated to manual ticketing processes, leading to operational cost savings. The real-time data and insights provided by this technology are invaluable, benefiting both passengers and transportation administrators. Passengers gain access to real-time information about routes, schedules, and available services, making their commute more convenient and informed. For transportation authorities and operators, real-time data leads to more efficient resource allocation, proactive decision-making, and improved service quality.\\
+\hspace*{0.5 in}By integrating RFID (Radio Frequency Identification) ticketing systems into the proposed solution, it offers a comprehensive approach to resolving longstanding ticketing issues. These technologies provide a versatile and secure method for fare collection, ensuring accuracy, traceability, and transparency in transactions. As a result, passengers enjoy a more reliable and seamless experience, while public transportation agencies benefit from increased revenue security and operational efficiency.\\
+\hspace*{0.5 in}This commuter trip tracking system represents a significant step towards a more efficient, cost-effective, and real-time solution to replace the conventional physical ticketing system. It ensures that passengers experience a smoother and more reliable travel experience while addressing long-standing challenges faced by the public transportation sector. Moreover, this innovative system acknowledges the potential for future enhancements. Future developments could include the installation of informational screens at vehicle entrances to provide passengers with real-time updates, news, and promotional offers. There is also considerable scope for further improvements in networking capabilities to ensure seamless data transfer and access to information. Additionally, the integration of biometric authentication systems could enhance the system's security, ensuring that passengers' identity is verified securely and efficiently.\\
+\hspace*{0.5 in}To keep pace with evolving technologies and passenger expectations, the system's future may involve expanding payment options to include debit and credit cards equipped with radio frequency recognition. These advancements can make public transportation even more accessible, efficient, and secure, aligning with the ever-changing landscape of urban mobility and passengers' evolving needs and expectations. In conclusion, the "IoT-based Web Application for Passenger Travel Tracking System" offers a transformative solution that addresses long-standing problems while paving the way for a more efficient and passenger-centric public transportation experience.
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\begin{thebibliography}{99}
+
+\bibitem{bm}
+L. M. Ni, D. Zhang and M. R. Souryal, "RFID-based localization and
+tracking technologies," in IEEE Wireless Communications, vol. 18, no.
+2, pp. 45-51, April 2011, doi: 10.1109/MWC.2011.5751295
+
+\bibitem{tbhp}
+Tzvetelina Battestilli and Harry Perros,
+``An Introduction to Optical Burst Switching'',
+{\it IEEE Optical Communication},
+Aug. 2003.
+
+
+
+\bibitem{tb}
+V. Pawar and N. P. Bhosale, "Internet-of-Things Based Smart Local
+Bus Transport Management System," 2018 Second International
+Conference on Electronics, Communication and Aerospace Technology
+(ICECA), 2018, pp. 598-601, doi: 10.1109/ICECA.2018.8474728.
+
+\bibitem {yc}
+K. Jo, K. Chu and M. Sunwoo, "Interacting Multiple Model FilterBased Sensor Fusion of GPS With In-Vehicle Sensors for Real-Time
+Vehicle Positioning," in IEEE Transactions on Intelligent
+Transportation Systems, vol. 13, no. 1, pp. 329-343, March 2012,
+doi:10.1109/TITS.2011.2171033.
+
+\bibitem {lw}
+N. R. Velaga, M. A. Quddus, A. L. Bristow and Y. Zheng, "Map-Aided
+Integrity Monitoring of a Land Vehicle Navigation System," in IEEE
+Transactions on Intelligent Transportation Systems, vol. 13, no. 2, pp.
+848-858, June 2012, doi: 10.1109/TITS.2012.2187196
+
+\bibitem{jxcq}
+C. Fouque and P. Bonnifait, "Matching Raw GPS Measurements on a
+Navigable Map Without Computing a Global Position," in IEEE
+Transactions on Intelligent Transportation Systems, vol. 13, no. 2, pp.
+887-898, June 2012, doi: 10.1109/TITS.2012.2186295.
+
+
+\bibitem{st}
+A. Guin, "Travel Time Prediction Using a Seasonal Autoregressive
+Integrated Moving Average Time Series Model," 2006 IEEE Intelligent
+Transportation Systems Conference, 2006, pp. 493-498,
+doi: 10.1109/ ITSC.2006.1706789.
+
+\bibitem{gm}
+O. D. Jimoh, L. A. Ajao, O. O. Adeleke and S. S. Kolo, "A Vehicle
+Tracking System Using Greedy Forwarding Algorithms for Public
+Transportation in Urban Arterial," in IEEE Access, vol. 8, pp. 191706-
+191725, 2020, doi: 10.1109/ACCESS.2020.3031488.
+
+\bibitem {kl}
+T. -H. Chang, L. -S. Wang and F. -R. Chang, "A Solution to the IllConditioned GPS Positioning Problem in an Urban Environment," in
+IEEE Transactions on Intelligent Transportation Systems, vol. 10, no.
+1, pp. 135-145, March 2009, doi: 10.1109/TITS.2008.2011709. 
+\bibitem{}
+C. Stauffer and W. E. L. Grimson, "Adaptive background mixture
+models for real-time tracking, "Proceedings. 1999 IEEE Computer
+Society Conference on Computer Vision and Pattern Recognition (Cat.No PR00149), 1999, pp. 246 - 252 Vol. 2, doi:
+10.1109/CVPR.1999.784637.
+\bibitem{}
+ S. Fujii et al., "Cooperative Vehicle Positioning via V2V
+Communications and Onboard Sensors," 2011 IEEE Vehicular
+Technology Conference (VTC Fall), 2011, pp. 1-5, doi:
+10.1109/VETECF.2011.6093218
+
+\bibitem{}
+E. Taropa, V. P. Srini and Tack-Don Han, "A framework for
+supporting autonomous navigation in automobiles," The Fourth IEEE
+Workshop on Software Technologies for Future Embedded and
+Ubiquitous Systems, and the Second International Workshop on
+Collaborative Computing, Integration, and Assurance (SEUSWCCIA'06), 2006, pp. 6 pp.-, doi: 10.1109/SEUS-WCCIA.2006.5.
+
+\bibitem{}
+V. S. M. Revanth Pasupuleti, B. M. Jollu, K. Chaithanya Janapati, A.
+Naseeha and P. Chandana, "Partial Automation of Automobiles using
+Embedded Systems," 2020 4th International Conference on Trends in
+Electronics and Informatics (ICOEI)(48184), 2020, pp. 191-195, doi:
+10.1109/ICOEI48184.2020.9142924.
+
+
+
+\bibitem{}
+P. Khurana, R. Arora and M. K. Khurana, "Implementation of
+electronic stability control and adaptive front lighting system for
+automobiles," 2014 International Conference on Power, Control and
+Embedded Systems (ICPCES), 2014, pp. 1-5, doi:
+10.1109/ICPCES.2014.7062803.
+
+\bibitem{}
+R. Verma et al., "Urban Eye: An outdoor localization system for public
+transport," IEEE INFOCOM 2016 - The 35th Annual IEEE
+International Conference on Computer Communications, 2016, pp. 1-9,
+doi: 10.1109/INFOCOM.2016.7524
+
+\bibitem{}
+H. Qin, Y. Peng and W. Zhang, "Vehicles on RFID: Error-Cognitive
+Vehicle Localization in GPS-Less Environments," in IEEE
+Transactions on Vehicular Technology, vol. 66, no. 11, pp. 9943-9957,
+Nov. 2017, doi: 10.1109/TVT.2017.2739123.
+
+
+\bibitem{}
+X. Feng, J. Zhang, J. Chen, G. Wang, L. Zhang and R. Li, "Design of
+Intelligent Bus Positioning Based on Internet of Things for Smart
+Campus," in IEEE Access, vol. 6, pp. 60005-60015, 2018, doi:
+10.1109/ACCESS.2018.2874083.
+\bibitem{}
+R. Chen, X. Huang, Y. Zhou, Y. Hui and N. Cheng, "UHF-RFIDBased Real-Time Vehicle Localization in GPS-Less Environments," in
+IEEE Transactions on Intelligent Transportation Systems, vol. 23, no.
+7, pp. 9286-9293, July 2022, doi: 10.1109/TITS.2021.3085824.
+
+
+
+
+
+
+
+\end{thebibliography}
+		
+\end{document}
